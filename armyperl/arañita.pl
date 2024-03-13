@@ -5,7 +5,29 @@
 use strict;
 use warnings;
 use JSON;
+use Net::OpenSSH;
 
+# Código para guardar las entradas en el archivo JSON...
+
+# Función para establecer una conexión SSH
+sub connect_to_ssh_server {
+    my ($host, $user, $password) = @_;
+
+    my $ssh = Net::OpenSSH->new($host, user => $user, password => $password);
+    die "Conexión SSH fallida: " . $ssh->error if $ssh->error;
+
+    return $ssh;
+}
+
+# Conexión SSH a un servidor remoto (VPS)
+my $ssh = connect_to_ssh_server('example.com', 'username', 'password');
+
+# Ejecutar comandos en el servidor remoto
+my $output = $ssh->capture("ls -l");
+print "Resultado de 'ls -l' en el servidor remoto:\n$output\n";
+
+# Cerrar la conexión SSH
+$ssh->disconnect;
 use constant MAX_URL_LENGTH => 256;
 use constant MAX_USER_AGENT_LENGTH => 256;
 use constant MAX_JSON_ENTRIES => 100;
