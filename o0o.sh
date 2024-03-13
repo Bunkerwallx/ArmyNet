@@ -20,9 +20,9 @@ case "$1" in
         ;;
     python)
         # Crear la carpeta de Python
-        mkdir python
-        cd python || exit
-        echo "Carpeta de Python creada"
+        mkdir $PROJECT_NAME
+        cd $PROJECT_NAME || touch setup.py  ||  || touch requerido.txt || exit
+        echo "Proyecto Python creado"
 
         # Crear el archivo principal de Python
         touch main.py
