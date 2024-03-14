@@ -57,4 +57,29 @@ int main() {
         create_entry(&json_entries[num_entries++], "", images[i], default_user_agents[rand() % (sizeof(default_user_agents) / sizeof(default_user_agents[0])), "Imagen");
     }
 
-    for (int i = 
+    for (int i = 0; i < sizeof(videos) / sizeof(videos[0]); i++) {
+        create_entry(&json_entries[num_entries++], "", videos[i], default_user_agents[rand() % (sizeof(default_user_agents) / sizeof(default_user_agents[0])), "Video");
+    }
+
+    // Guardar las entradas en el archivo JSON
+    FILE *json_file = fopen("visited_urls.json", "w");
+    if (json_file == NULL) {
+        fprintf(stderr, "Error al abrir el archivo JSON\n");
+        return 1;
+    }
+
+    fprintf(json_file, "[\n");
+    for (int i = 0; i < num_entries; i++) {
+        save_entry(&json_entries[i], json_file);
+        if (i < num_entries - 1) {
+            fprintf(json_file, ",\n");
+        }
+    }
+    fprintf(json_file, "]\n");
+
+    fclose(json_file);
+
+    printf("Las direcciones web visitadas se han guardado en visited_urls.json\n");
+
+    return 0;
+}
