@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acortador de URL</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            animation: fadeIn 2s;
+        }
+
+        h4 {
+            color: #666;
+            text-align: center;
+            animation: fadeIn 2s;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        /* Estilos para el menú de navegación */
+        .navbar {
+            background-color: #333;
+            overflow: auto;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Estilos para la sección del motor de búsqueda */
+        .search-section {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-section h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <div class="navbar">
+        <a href="#inicio">Inicio</a>
+        <a href="#acortador">Acortador de URL</a>
+        <a href="#busqueda">Búsqueda Web</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+
+    <h1>Crocodine</h1>
+    <h4>* Tu acortador de Confianza</h4>
+    <form action="https://ejemplo.com/acortar" method="post" id="acortador">
+        <label for="url">Introduce la URL que deseas acortar:</label><br>
+        <input type="text" id="url" name="url" required><br><br>
+        <button type="submit">Acortar</button>
+    </form>
+    <div id="resultado">
+        <!-- Aquí se mostrará el resultado del acortador -->
+    </div>
+
+    <!-- Sección de Búsqueda Web -->
+    <div class="search-section" id="busqueda">
+        <h1>•• Calexico ••</h1>
+        <h3>Motor de Búsqueda Web</h3>
+        <form action="https://ejemplo.com/buscar" method="get">
+            <input type="text" class="search-input" name="q" placeholder="Buscar en la web...">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <!-- Indexador web -->
+    <h2 id="inicio">Índice</h2>
+    <ul>
+        <li><a href="#acortador">Acortador de URL</a></li>
+        <li><a href="#busqueda">Búsqueda Web</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</body>
+</html>
