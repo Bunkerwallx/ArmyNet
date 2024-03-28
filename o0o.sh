@@ -299,6 +299,12 @@
 ##
 
 *//
+
+
+
+
+
+
 # Solicitar al usuario el nombre del proyecto
 read -p "Ingrese el nombre del proyecto: " PROJECT_NAME
 mkdir "$PROJECT_NAME" && cd "$PROJECT_NAME" || exit
